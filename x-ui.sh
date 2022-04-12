@@ -94,7 +94,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/levanhau03/x-ui/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/levanhau03/x-ui/main/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
