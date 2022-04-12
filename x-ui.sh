@@ -105,9 +105,9 @@ install() {
 }
 
 update() {
-    confirm "本功能会强制重装当前最新版，数据不会丢失，是否继续?" "n"
+    confirm "Chức năng này sẽ buộc cài đặt lại phiên bản mới nhất và dữ liệu sẽ không bị mất. Bạn có muốn tiếp tục không?" "n"
     if [[ $? != 0 ]]; then
-        LOGE "已取消"
+        LOGE "Đã hủy"
         if [[ $# == 0 ]]; then
             before_show_menu
         fi
@@ -115,13 +115,13 @@ update() {
     fi
     bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
     if [[ $? == 0 ]]; then
-        LOGI "更新完成，已自动重启面板 "
+        LOGI "Cập nhật hoàn tất, bảng điều khiển đã được tự động khởi động lại "
         exit 0
     fi
 }
 
 uninstall() {
-    confirm "确定要卸载面板吗，xray 也会卸载?" "n"
+    confirm "Bạn có chắc chắn muốn gỡ cài đặt bảng điều khiển, xray cũng sẽ gỡ cài đặt?" "n"
     if [[ $? != 0 ]]; then
         if [[ $# == 0 ]]; then
             show_menu
